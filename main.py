@@ -992,7 +992,7 @@ async def frank(ctx):
 async def bigfrank(ctx):
     embed = discord.Embed()
     embed.set_image(url='https://i.imgur.com/N5bjEMl.png')
-await bot.say(embed=embed)    
+    await bot.say(embed=embed)    
   
 @bot.command(pass_context=True, brief="Checks the bots status")
 async def health(ctx):
