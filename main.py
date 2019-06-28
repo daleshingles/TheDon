@@ -73,7 +73,32 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
+#start CuckTim Section
+#replaces "Cuck" with Rotating Light Emoji, meant to piss off Tim
+@bot.event
+async def on_message(message):
+    if not message.author.bot and "cuck" in message.content.lower():
+        CuckString = message.content.replace('cuck', ':rotating_light:')
+        newString = re.compile("cuck", re.IGNORECASE)
+        await bot.send_message(message.channel, newString.sub('cuck', cuckString))
+    elif (str(ctx.message.author) == "RacistJudicata#8536"):
+        await bot.say("Stop it, Tim")
+    else:
+         await bot.process_commands(message)
 
+#end CuckTim Section
+
+#start /r/replacement
+@bot.event
+async def on_message(message):
+    if not message.author.bot and "r/" in message.content.lower():
+        rString = message.content.replace('r/', 'https://old.reddit.com/r/')
+        newString = re.compile("r/", re.IGNORECASE)
+        await bot.send_message(message.channel, newString.sub('r/', rString))
+
+    await bot.process_commands(message)
+#end /r/replacement
+    
 @bot.command(pass_context=True)
 async def meme(ctx, meme_name, image_link):
     current_meme_list = memes.search(query.name == meme_name)
