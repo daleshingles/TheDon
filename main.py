@@ -975,6 +975,12 @@ async def pinksock(ctx):
     await ctx.send(emoji)
 
 @bot.command(pass_context=True, brief="", description="")
+async def tim(ctx):
+    embed = discord.Embed()
+    embed.set_image(url='https://i.imgur.com/woy7cJR.gifv')
+    await ctx.send(embed=embed)    
+    
+@bot.command(pass_context=True, brief="", description="")
 async def free(ctx):
     embed = discord.Embed()
     embed.set_image(url='https://media.giphy.com/media/5wWf7GMbT1ZUGTDdTqM/giphy.gif')
